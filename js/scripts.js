@@ -90,9 +90,11 @@ function checkRoundWinner(playerPick, computerPick) {
     if (winnerIs == 'player') {
         playerResultElem.innerHTML = "Wygrana!";
         player.score++;
+        playerPointsElem.innerHTML = player.score;
     } else if (winnerIs == 'computer') {
         computerResultElem.innerHTML = "Wygrana!";
         computer.score++;
+        computerPointsElem.innerHTML = computer.score;
     }
     if (player.score > 9 || computer.score > 9){
     	if(player.score > computer.score){
