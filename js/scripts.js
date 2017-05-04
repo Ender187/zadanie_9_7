@@ -71,6 +71,7 @@ var playerPickElem = document.getElementById('js-playerPick'),
     computerPickElem = document.getElementById('js-computerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
+
 function checkRoundWinner(playerPick, computerPick) {
   playerResultElem.innerHTML = computerResultElem.innerHTML = '';
 
@@ -92,6 +93,15 @@ function checkRoundWinner(playerPick, computerPick) {
     } else if (winnerIs == 'computer') {
         computerResultElem.innerHTML = "Wygrana!";
         computer.score++;
+    }
+    if (player.score > 9 || computer.score > 9){
+    	if(player.score > computer.score){
+    		alert(player.name + ', WYGRYWASZ !!');
+    	} else {
+    	alert('COMPUTER WYGRYWA :( ');
+    }
+    	gameState = 'ended';
+    	setGameElements();
     }
 
 }
